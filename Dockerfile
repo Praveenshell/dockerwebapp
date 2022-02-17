@@ -8,7 +8,7 @@ USER root
 ADD cis.sh /
 RUN /bin/bash "/cis.sh"
 HEALTHCHECK CMD exit 0
-USER noroot
+
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
