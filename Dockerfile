@@ -3,6 +3,13 @@ FROM node:16
 # Create app directory
 WORKDIR /usr/src/app
 
+# Hardening Scripts
+USER root
+ADD cis.sh /
+RUN /bin/bash "/cis.sh"
+HEALTHCHECK CMD exit 0
+USER noroot
+
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
